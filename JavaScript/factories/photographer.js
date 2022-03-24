@@ -31,3 +31,49 @@ function photographerFactory(data) {
     return { name, picture, location, tagline, prices, link, getUserCardDOM }
 
 }
+function pagePhotographerFactory(data) {
+    const { name, portrait, city, country, tagline } = data;
+
+    const picture = `/images/photographers/Profils/${portrait}`;
+    const location = `${city}, ${country}`;
+
+    function getUserCardDOM() {
+        const section = document.createElement( 'section' );
+        const img = document.createElement( 'img' );
+        img.setAttribute("src", picture)
+        const h1 = document.createElement( 'h1' );
+        h1.textContent = name;
+        const h2 = document.createElement('h2');
+        h2.textContent = location;
+        const p = document.createElement('p');
+        p.textContent = tagline;
+        section.appendChild(img);
+        section.appendChild(h1);
+        section.appendChild(h2);
+        section.appendChild(p);
+        return (section);
+    }
+    return { name, picture, location, tagline, getUserCardDOM }
+
+}
+function mediaFactory(data) {
+    const { title, image, likes, photographerId } = data;
+
+    const picture = `/images/photographers//${image}`;
+
+    function getUserCardDOM() {
+        const article = document.createElement( 'article' );
+        const img = document.createElement( 'img' );
+        img.setAttribute("src", picture)
+        const h3 = document.createElement('h3');
+        h3.textContent = title;
+        const p = document.createElement('p');
+        p.textContent = likes;
+        article.appendChild(img);
+        article.appendChild(h3);
+        article.appendChild(p);
+        return (article);
+    }
+    return { title, picture, likes, getUserCardDOM }
+
+}
