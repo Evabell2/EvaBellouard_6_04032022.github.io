@@ -1,3 +1,147 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+}
+/* CSS HEADER */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+.photograph-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+    margin: 0 5% 5% 5%;
+    padding: 2% 5%;
+    background-color: #efefef;
+    border-radius: 10px;
+}
+.photograph-header img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 150px;
+}
+.photograph-header h1 {
+    margin: 0;
+    color: #D3573C;
+    font-size: 60px;
+    font-weight: 100;
+}
+.photograph-header h2 {
+    margin: 0;
+    color: #a3341c;
+    font-weight: 500;
+    font-size: 20px;
+}
+.photograph-header p {
+    color: #787878;
+}
+
+/* CSS MEDIAS */
+
+.photographe-medias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 5%;
+}
+.photographe-medias article {
+    width: calc(90% / 3);
+    margin: 20px 0;
+}
+article img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+article video {
+    height: 400px;
+    width: 100%;
+    background: black;
+    border-radius: 10px;
+}
+article div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #a3341c;
+}
+article div h3 {
+    margin: 0;
+    font-weight: 500;
+}
+article div p {
+    display: flex;
+    margin: 0;
+    font-weight: bold;
+}
+article div p::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    background: url("/images/images/coeur.png");
+    background-size: contain;
+}
+
+/* CSS LIGHTBOX */
+
+.lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .9);
+}
+.lightbox_container {
+    text-align: center;
+}
+.lightbox_container img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
+.lightbox_next, .lightbox_prev {
+    position: fixed;
+    top: 50%;
+    margin-top: -14px;
+    width: 40px;
+    height: 30px;
+    background: url("/images/images/fleche-droite.png") center;
+    background-size: contain;
+    border: none;
+    text-indent: -3000px;
+    cursor: pointer;
+}
+.lightbox_prev {
+    right: auto;
+    left: 0;
+    margin-left: 25%;
+    transform: rotate(180deg);
+}
+.lightbox_next {
+    right: 0;
+    margin-right: 25%;
+}
+
+/* CSS FORM */
+
 #contact_modal {
     display: none;
     position: absolute;
@@ -6,15 +150,6 @@
     right: 0;
     height: 100%;
     width: 100%;
-}
-
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
-}
-.photograph-header img {
-    width: 15%;
 }
 
 .contact_button {
