@@ -2,7 +2,7 @@
     // Récupère l'Id de l'URL
     let urlData = new URLSearchParams(window.location.search)
     const profilPhotographe = urlData.get('id')
-    console.log(profilPhotographe)
+    // console.log(profilPhotographe)
 
     let profilData = [];
 
@@ -25,7 +25,7 @@
             for (const media of data.media) {
                 if (media.photographerId==profilPhotographe) {
                     const photographersSection = document.querySelector(".photographe-medias");
-                    console.log(media);
+                    // console.log(media);
                     const mediaModel = MediaFactory(media, profil);
                     const mediaCardDom = mediaModel.getUserMedia();
                     photographersSection.appendChild(mediaCardDom);
@@ -35,5 +35,4 @@
             }
         });
     };
-
     fetchProfil();
