@@ -58,7 +58,7 @@
         ]
         return ({photographers})
     }
-
+    
     async function displayData(photographers) {
         photographers.forEach((photographer) => {
             const photographersSection = document.querySelector(".photographer_section");

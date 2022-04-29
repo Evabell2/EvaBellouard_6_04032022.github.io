@@ -20,19 +20,21 @@
         <div class="photo-de-profil"></div>
       </div>
 
-      <div class="filtres">
+      <div id="filtres">
         <p>Trier par</p>
-        <ul class="current-filter">
-          <li>Popularité</li>
-          <ul class="filtre">
-            <li>Date</li>
-            <li>Titre</li>
-          </ul>
+
+        <ul id="filtre-close">
+          <li id="filtre-current">Popularité</li>
+        </ul>
+
+        <ul id="filtre-open">
+          <li id="filtre-popularite">Popularité</li>
+          <li id="filtre-date">Date</li>
+          <li id="filtre-titre">Titre</li>
         </ul>
       </div>
 
-      <div class="photographe-medias" id="photographe-medias">
-      </div>
+      <div class="photographe-medias" id="photographe-medias"></div>
 
     </main>
 
@@ -69,22 +71,13 @@
 			</div>
 		</div>
 
-    <div class="lightbox">
-      <div class="lightbox_container">
-          <img src="/images/photographers/Mimi Keel/Event_PintoWedding.jpg" alt="">
-      </div>
-      <button class="lightbox_close">Fermer</button>
-      <button class="lightbox_next">Next</button>
-      <button class="lightbox_prev">Prev</button>
-    </div>
-
-
     <script src="/JavaScript/factories/photographer.js"></script>
     <script src="/JavaScript/factories/index.js"></script>
     <script src="/JavaScript/pages/index.js"></script>
     <script src="/JavaScript/pages/photographer.js"></script>
     <script src="/JavaScript/Fonctionnalites/Lightbox.js"></script>
     <script src="/JavaScript/Fonctionnalites/Filtres.js"></script>
+    <script src="/JavaScript/Fonctionnalites/Likes.js"></script>
     <script src="/JavaScript/utils/contactForm.js"></script>
   </body>
 </html>

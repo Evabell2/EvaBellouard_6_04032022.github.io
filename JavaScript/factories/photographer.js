@@ -22,12 +22,10 @@ function MediaFactory(data, photographer) {
         if (video.src.includes('mp4')) {
             article.appendChild(a);
             a.appendChild(video);
-            article.appendChild(video)
         }
         else {
             article.appendChild(a);
             a.appendChild(img);
-            article.appendChild(img)
         }
         article.appendChild(div);
         div.appendChild(h3);

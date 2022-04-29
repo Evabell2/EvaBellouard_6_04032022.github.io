@@ -57,6 +57,7 @@ header {
 .photographe-medias article {
     width: calc(90% / 3);
     margin: 20px 0;
+    z-index: 0;
 }
 article img {
     height: 400px;
@@ -107,40 +108,49 @@ article div p:hover {
 
 /* FILTRES */
 
-.filtres {
+#filtres {
+    position: relative;
     display: flex;
-    margin: 0 5%;
+    margin: 0 5% 2% 5%;
+    z-index: 1;
 }
-.filtres p {
+#filtres p {
     font-weight: bold;
     font-size: 18px;
 }
-.filtres ul {
+#filtres ul {
+    position: absolute;
+    top: 0;
+    right: 80%;
+    width: 10%;
+    cursor: pointer;
     margin-left: 30px;
     padding: 10px;
     background: #901C1C;
-    border-radius: 10px;
-
+    border-radius: 5px;
 }
-.filtres ul.filtre {
+#filtres ul#filtre-open {
     display: none;
-    margin-left: 0;
-    padding: 0;
 }
-.filtres ul.filtre li {
-    justify-content: flex-start;
+#filtres ul li {
+    padding: 10px 5px 10px 5px;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
 }
-.filtres ul.current-filter {
-    width: 10%;
-}
-.filtres ul.filtre li:first-of-type {
+#filtres ul#filtre-open li#filtre-date {
     border-bottom: 2px solid white;
     border-top: 2px solid white;
 }
-.filtres ul.filtre li::after {
-    display: none !important;
+#filtres ul#filtre-open li:first-of-type {
+    display: flex;
+    justify-content: space-between;
 }
-.filtres ul.current-filter li::after {
+#filtres ul#filtre-close li:first-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+#filtres ul#filtre-close li::after {
     content: "";
     display: block;
     width: 20px;
@@ -148,19 +158,16 @@ article div p:hover {
     background: url("/images/icons/icons8-chevron-droit-26.png") center no-repeat;
     background-size: contain;
 }
-.filtres ul.current-filter li {
-    display: flex;
+#filtres ul#filtre-open li#filtre-popularite::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("/images/icons/icons8-chevron-droit-26.png") center no-repeat;
+    background-size: contain;
+    transform: rotate(180deg);
 }
-.filtres li {
-    justify-content: space-around;
-    padding: 10px 5px 10px 5px;
-    list-style-type: none;
-    color: white;
-    font-size: 18px;
-}
-.filtres li:last-of-type {
-    border-bottom: none;
-}
+
 
 /* CSS LIGHTBOX */
 
@@ -173,11 +180,9 @@ article div p:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .9);
+    background-color: white;
     display: none;
-}
-.lightbox.show {
-    display: block;
+    z-index: 1;
 }
 .lightbox_container {
     text-align: center;
@@ -186,6 +191,13 @@ article div p:hover {
     width: 900px;
     height: 650px;
     object-fit: cover;
+}
+.lightbox_container video {
+    width: 900px;
+    height: 450px;
+    object-fit: cover;
+    border-top: 100px solid black;
+    border-bottom: 100px solid black;
 }
 .lightbox_next, .lightbox_prev {
     position: fixed;
@@ -218,6 +230,13 @@ article div p:hover {
     border: none;
     text-indent: -3000px;
     cursor: pointer;
+}
+.lightbox h3 {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 20px;
+    color: #a3341c;
+    font-weight: 500;
 }
 
 /* CSS FORM */

@@ -33,6 +33,17 @@
                     // insérer la carte générée dans le DOM
                 }
             }
+            // const filtreTitre = document.getElementById('filtre-titre');
+            // filtreTitre.addEventListener('click', e => {
+            //     const mediaArray = data.media
+            //     mediaArray.sort((a,b) => b.likes - a.likes)
+            // })
+            // array.sort((a,b) => b.date - a.date)
+            // element.sort((a,b) => a.title.localeCompare(b.title))
+           // prenoms.sort()
+            Filters()
+            Lightbox()
+            compteurLikes()
         });
     };
     fetchProfil();

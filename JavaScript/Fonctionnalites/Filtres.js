@@ -1,16 +1,27 @@
-// const BtnFilter = document.getElementsByClassName('current-filter');
-// const showFilters = document.getElementsByClassName('filtre');
-// console.log(BtnFilter)
+function Filters() {
+    const filtreClose = document.getElementById('filtre-close');
+    const filtreOpen = document.getElementById('filtre-open');
 
-// function openFilter() {
-//     showFilters.style.display = "block";
-// }
-// function closeFilter() {
-//     showFilters.style.display = "none";
-// }
+    filtreClose.addEventListener('click', e => {
+        filtreOpen.style.display='block'
+    })
+    filtreOpen.addEventListener('click', e => {
+        filtreOpen.style.display='none'
+    })
 
-// BtnFilter.forEach((btn) => btn.addEventListener("click", openFilter));
+    const filtreCurrent = document.getElementById("filtre-current")
+    const filtrePopularite = document.getElementById('filtre-popularite');
+    const filtreDate = document.getElementById('filtre-date');
+    const filtreTitre = document.getElementById('filtre-titre');
 
-
-
+    filtrePopularite.addEventListener('click', e => {
+        filtreCurrent.textContent="Popularité"
+    })   
+    filtreDate.addEventListener('click', e => {
+        filtreCurrent.textContent="Date"
+    })
+    filtreTitre.addEventListener('click', e => {
+        filtreCurrent.textContent="Titre"
+    })
+}
 
