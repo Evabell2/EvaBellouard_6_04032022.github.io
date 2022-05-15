@@ -9,28 +9,28 @@
   </head>
   <body>
     <header>
-      <a href="/index.html"><img src="/images/images/logo.png" class="logo" /></a>
+      <a href="/index.html"><img src="/images/images/logo.png" class="logo"/></a>
     </header>
     
     <main id="main" class="pagePhotographer">
 
       <div class="photograph-header">
         <div class="profil-photographe"></div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" onclick="displayModal()" aria-label="Ouvre la fenêtre de contact">Contactez-moi</button>
         <div class="photo-de-profil"></div>
       </div>
 
       <div id="filtres">
-        <p>Trier par</p>
+        <p tabindex="0">Trier par</p>
 
-        <ul id="filtre-close">
-          <li id="filtre-current">Popularité</li>
+        <ul id="filtre-close" tabindex="0">
+          <li id="filtre-current" aria-label="Ouvre le menu déroulant de filtres">Popularité</li>
         </ul>
 
         <ul id="filtre-open">
-          <li id="filtre-popularite">Popularité</li>
-          <li id="filtre-date">Date</li>
-          <li id="filtre-titre">Titre</li>
+          <li id="filtre-popularite" tabindex="0">Popularité</li>
+          <li id="filtre-date" tabindex="0">Date</li>
+          <li id="filtre-titre" tabindex="0">Titre</li>
         </ul>
       </div>
 
@@ -39,34 +39,37 @@
     </main>
 
     <div id="contact_modal">
-			<div class="modal">
+			<div class="modal" aria-label="Modal de contact">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="/images/icons/close.svg" onclick="closeModal()" />
+          <div tabindex="2">
+            <h2 >Contactez-moi</h2>
+            <p></p>
+          </div>
+          <img src="/images/icons/close.svg" id="boutonClose" onclick="closeModal()" aria-label="Fermer le formulaire" tabindex="8" />
         </header>
-				<form action="photographer.html" method="get">
+				<form action="photographer.html" method="get" aria-label="Formulaire de contact">
 
 					<div>
 						<label>Prénom</label>
-						<input required />
+						<input required tabindex="3" class="prenom"/>
 					</div>
 
           <div>
 						<label>Nom</label>
-						<input required />
+						<input required tabindex="4" class="nom"/>
 					</div>
 
           <div>
 						<label>Email</label>
-						<input required />
+						<input required tabindex="5" class="email"/>
 					</div>
 
           <div>
 						<label>Votre message</label>
-						<input class="textarea" required></input>
+						<input class="textarea" required tabindex="6"></input>
 					</div>
 
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" aria-label="Envoie du formulaire" tabindex="7">Envoyer</button>
 				</form>
 			</div>
 		</div>

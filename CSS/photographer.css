@@ -10,9 +10,11 @@ header {
     align-items: center;
     height: 90px;
 }
+header a {
+    margin-left: 7%;
+}
 .logo {
     height: 50px;
-    margin-left: 100px;
 }
 .photograph-header {
     display: flex;
@@ -38,7 +40,7 @@ header {
 }
 .photograph-header h2 {
     margin: 0;
-    color: #a3341c;
+    color: #901C1C;
     font-weight: 500;
     font-size: 20px;
 }
@@ -71,23 +73,27 @@ article video {
     background: black;
     border-radius: 10px;
 }
-article div {
+article .contenu {
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 20px;
-    color: #a3341c;
+    color: #901C1C;
 }
-article div h3 {
+article a {
+    display: block;
+    height: 400px;
+}
+article .contenu h3 {
     margin: 0;
     font-weight: 500;
 }
-article div p {
+article .contenu p {
     display: flex;
     margin: 0;
     font-weight: bold;
 }
-article div p::after {
+article .contenu p::after {
     content: '';
     display: block;
     width: 25px;
@@ -101,7 +107,7 @@ article p:hover {
     transition: transform 300ms ease-in-out;
     cursor: pointer;
 }
-article div p:hover {
+article .contenu p:hover {
     transform: scale(1.2);
     transition: transform 300ms ease-out;
 }
@@ -128,6 +134,9 @@ article div p:hover {
     padding: 10px;
     background: #901C1C;
     border-radius: 5px;
+}
+#filtres ul:hover, #filtres ul:focus {
+    background: #D3573C;
 }
 #filtres ul#filtre-open {
     display: none;
@@ -235,9 +244,40 @@ article div p:hover {
     margin-top: 10px;
     text-align: left;
     font-size: 20px;
-    color: #a3341c;
+    color: #901C1C;
     font-weight: 500;
 }
+
+/* CSS COMPTEUR DE LIKES */
+
+#compteur-likes {
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    display: flex;
+    padding: 25px 35px;
+    background: #D3573C;
+    border-radius: 10px 10px 0 0;
+}
+#compteur-likes span {
+    font-size: 25px;
+    font-weight: bold;
+}
+#compteur-likes span:first-of-type {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+#compteur-likes span:first-of-type:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+    background: url("/images/icons/coeur.png");
+    background-size: contain;
+}
+
 
 /* CSS FORM */
 
@@ -262,6 +302,9 @@ article div p:hover {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+.contact_button:hover, .contact_button:focus {
+    background-color: #D3573C;
 }
 
 .modal {
@@ -293,7 +336,10 @@ article div p:hover {
     margin: 0;
     font-size: 40px;
     font-weight: normal;
-    text-align: center;
+}
+.modal header p {
+    margin: 0;
+    font-size: 40px;
 }
 
 form {

@@ -43,6 +43,9 @@ function Lightbox() {
                     img.style.display="block"
                 }
             }
+            function goClose() {
+                lightbox.style.display = "none"
+            }
 
             lightbox.className = 'lightbox'
             lightbox.style.display = "flex" 
@@ -69,41 +72,37 @@ function Lightbox() {
             document.body.appendChild(lightbox)
             const close = document.createElement("button")
             close.className = "lightbox_close"
+            close.ariaLabel="Ferme la fenêtre"
             lightbox.appendChild(close)
             const prev = document.createElement("button")
             prev.className = "lightbox_prev"
+            prev.ariaLabel="Va à l'image précédente"
             lightbox.appendChild(prev)
             const next = document.createElement("button")
             next.className = "lightbox_next"
+            next.ariaLabel="Va à l'image suivante"
             lightbox.appendChild(next)
-            
-            function goClose() {
-                lightbox.style.display = "none"
-            }
-            document.addEventListener("keydown", espace)
-            function espace(e) {
-                e.preventDefault();
-                if (e.keyCode == 32) {
-                    goClose()
-                }
-            }
-            close.addEventListener('click', goClose)
 
-            document.addEventListener("keydown", right)
-            function right(e) {
-                if (e.keyCode == 39) {
+            next.addEventListener('click', goNext)
+            document.addEventListener("keydown", e => {
+                if (e.key == 'ArrowRight') {
                     goNext()
                 }
-            }
-            next.addEventListener('click', goNext)
+            })
 
-            document.addEventListener("keydown", left)
-            function left(e) {
-                if (e.keyCode == 37) {
+            prev.addEventListener('click', goPrev)
+            document.addEventListener("keydown", e => {
+                if (e.key == 'ArrowLeft') {
                     goPrev()
                 }
-            }
-            prev.addEventListener('click', goPrev)
+            })
+
+            close.addEventListener('click', goClose)
+            document.addEventListener("keydown", e => {
+                if (e.key == 'Escape') {
+                    goClose()
+                }
+            })
         })
     }
 }

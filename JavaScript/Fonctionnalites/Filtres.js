@@ -5,8 +5,19 @@ function Filters() {
     filtreClose.addEventListener('click', e => {
         filtreOpen.style.display='block'
     })
+    filtreClose.addEventListener("keydown", e => {
+        if (e.key == 'Enter') {
+            filtreOpen.style.display='block'
+        }
+    })
+
     filtreOpen.addEventListener('click', e => {
         filtreOpen.style.display='none'
+    })
+    filtreOpen.addEventListener("keydown", e => {
+        if (e.key == 'Escape') {
+            filtreOpen.style.display='none'
+        }
     })
 
     const filtreCurrent = document.getElementById("filtre-current")
