@@ -1,7 +1,7 @@
 function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data
 
-    const picture = `/images/photographers/Profils/${portrait}`
+    const picture = `images/photographers/Profils/${portrait}`
     const pictureAlt = `${name}`
     const location = `${city}, ${country}`
     const prices = `${price}€/jour`

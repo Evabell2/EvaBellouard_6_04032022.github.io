@@ -23,7 +23,7 @@
              </div>`
 
             document.querySelector(".photo-de-profil").innerHTML = 
-            `<img src="/images/photographers/Profils/${profil.portrait}" alt="${profil.name}" tabindex="0"/>`;
+            `<img src="images/photographers/Profils/${profil.portrait}" alt="${profil.name}" tabindex="0"/>`;
             // profil = info du photographe
 
             document.querySelector(".modal p").innerHTML = `${profil.name}`
