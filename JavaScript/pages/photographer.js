@@ -34,7 +34,7 @@
             const titreFiltre = document.getElementById('filtre-titre');
             profilData.media.sort((a,b) => b.likes - a.likes)
 
-            populariteFiltre.addEventListener('click', e => {
+            populariteFiltre.addEventListener('click', () => {
                 profilData.media.sort((a,b) => b.likes - a.likes)
                 renderCards()
             })
@@ -45,14 +45,14 @@
                 }
             })
 
-            dateFiltre.addEventListener('click', e => {
+            dateFiltre.addEventListener('click', () => {
                 profilData.media.sort(byDate)
                 function byDate(a, b) {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf()
                 }
                 renderCards()
             })
-            dateFiltre.addEventListener('keydown', e => {
+            dateFiltre.addEventListener('keydown', () => {
                 profilData.media.sort(byDate)
                 function byDate(a, b) {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf()
@@ -60,25 +60,24 @@
                 renderCards()
             })
         
-            titreFiltre.addEventListener('click', e => {
+            titreFiltre.addEventListener('click', () => {
                 profilData.media.sort((a,b) => a.title.localeCompare(b.title))
                 renderCards()
             })
-            titreFiltre.addEventListener('keydown', e => {
+            titreFiltre.addEventListener('keydown', () => {
                 profilData.media.sort((a,b) => a.title.localeCompare(b.title))
                 renderCards()
             })
 
             renderCards()
-            Filters()
             Lightbox()
-        });
-    };
-    fetchProfil();
+        })
+    }
+    fetchProfil()
     
     function renderCards() {
         likes = 0
-        const photographersSection = document.querySelector(".photographe-medias");
+        const photographersSection = document.querySelector("#photographe-medias");
         photographersSection.innerHTML = ``
         for (const media of profilData.media) {
             if (media.photographerId==profilPhotographe) {
@@ -99,12 +98,19 @@
         <span>${profil.price} € / jour</span>`
         document.body.appendChild(blocLikes)
 
-        boutonLikes = document.querySelectorAll('.contenu > p')
-        likesTotal = document.getElementById('likesTotal')
+        const boutonLikes = document.querySelectorAll('.contenu p')
+        // const coeurVide = document.querySelector('.coeur-vide')
+        // const coeurplein = document.querySelector('.coeur-plein')
+        const likesTotal = document.getElementById('likesTotal')
+
         for (const boutonLike of boutonLikes) {
-            boutonLike.addEventListener('click', element => {
+            boutonLike.addEventListener('click', () => {
                 boutonLike.textContent++
                 likesTotal.textContent++
             })
+            // boutonLike.removeEventListener('click', element => {
+            //     boutonLike.textContent-=
+            //     likesTotal.textContent-=
+            // })
         }
     }

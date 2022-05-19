@@ -2,7 +2,7 @@ function Filters() {
     const filtreClose = document.getElementById('filtre-close')
     const filtreOpen = document.getElementById('filtre-open')
 
-    filtreClose.addEventListener('click', e => {
+    filtreClose.addEventListener('click', () => {
         filtreOpen.style.display='block'
     })
     filtreClose.addEventListener("keydown", e => {
@@ -11,7 +11,7 @@ function Filters() {
         }
     })
 
-    filtreOpen.addEventListener('click', e => {
+    filtreOpen.addEventListener('click', () => {
         filtreOpen.style.display='none'
     })
     filtreOpen.addEventListener("keydown", e => {
@@ -25,14 +25,15 @@ function Filters() {
     const filtreDate = document.getElementById('filtre-date')
     const filtreTitre = document.getElementById('filtre-titre')
 
-    filtrePopularite.addEventListener('click', e => {
+    filtrePopularite.addEventListener('click', () => {
         filtreCurrent.textContent="Popularité"
     })   
-    filtreDate.addEventListener('click', e => {
+    filtreDate.addEventListener('click', () => {
         filtreCurrent.textContent="Date"
     })
-    filtreTitre.addEventListener('click', e => {
+    filtreTitre.addEventListener('click', () => {
         filtreCurrent.textContent="Titre"
     })
 }
+Filters()
 

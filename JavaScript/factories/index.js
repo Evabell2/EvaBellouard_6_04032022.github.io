@@ -39,5 +39,5 @@ function photographerFactory(data) {
         return (article)
     }
     return { name, picture, pictureAlt, location, tagline, prices, link, getUserCardDOM }
-
 }
+photographerFactory()

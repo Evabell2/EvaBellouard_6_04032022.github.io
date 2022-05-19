@@ -16,7 +16,6 @@ function Lightbox() {
                 url = cardNext.getAttribute('href')
                 img.src = url
                 h3.innerText = (cardNext.parentNode.querySelector("h3")).innerHTML
-                lightboxContainer = document.querySelector(".lightbox_container")
                 if (cardNext.firstChild.src.includes('mp4')) {
                     video.style.display="block"
                     video.src = cardNext.firstChild.getAttribute('src')
@@ -106,6 +105,6 @@ function Lightbox() {
         })
     }
 }
-
+Lightbox()
 
 

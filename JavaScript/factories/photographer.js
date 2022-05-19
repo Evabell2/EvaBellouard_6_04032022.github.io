@@ -32,14 +32,32 @@ function MediaFactory(data, photographer) {
         const h3 = document.createElement('h3')
         h3.textContent = title;
         h3.tabIndex="0"
+        const divLikes = document.createElement('div')
+
+        const coeurVide = document.createElement('img')
+        coeurVide.className = "coeur-vide"
+        const attributCoeurVide = "images/icons/coeur-vide.png"
+        coeurVide.setAttribute("src", attributCoeurVide)
+        coeurVide.setAttribute("alt", "coeur vide")
+
+        const coeurPlein = document.createElement('img')
+        coeurPlein.className = "coeur-plein"
+        const attributCoeurPlein = "images/icons/coeur.png"
+        coeurPlein.setAttribute("src", attributCoeurPlein)
+        coeurPlein.setAttribute("alt", "coeur rouge")
+
         const p = document.createElement('p')
         p.textContent = likes
         p.tabIndex="0"
 
         article.appendChild(div)
         div.appendChild(h3)
-        div.appendChild(p)
+        div.appendChild(divLikes)
+        divLikes.appendChild(p)
+        divLikes.appendChild(coeurVide)
+        divLikes.appendChild(coeurPlein)
         return (article)
     }
     return { title, pictureMedia, pictureAlt, likes, videoMedia, getUserMedia }
 }
+MediaFactory()

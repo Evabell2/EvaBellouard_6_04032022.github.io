@@ -50,13 +50,13 @@ header a {
 
 /* CSS MEDIAS */
 
-.photographe-medias {
+#photographe-medias {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 5%;
 }
-.photographe-medias article {
+#photographe-medias article {
     width: calc(90% / 3);
     margin: 20px 0;
     z-index: 0;
@@ -77,6 +77,7 @@ article .contenu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10px;
     font-size: 20px;
     color: #901C1C;
 }
@@ -93,21 +94,33 @@ article .contenu p {
     margin: 0;
     font-weight: bold;
 }
-article .contenu p::after {
-    content: '';
+article .contenu div {
+    display: flex;
+    align-items: center;
+}
+article .contenu .coeur-vide {
     display: block;
     width: 25px;
     height: 25px;
     margin-left: 5px;
-    background: url("/images/icons/coeur.png");
-    background-size: contain;
-}
-article p:hover {
     transform: scale(1);
     transition: transform 300ms ease-in-out;
     cursor: pointer;
 }
-article .contenu p:hover {
+article .contenu .coeur-vide:hover {
+    transform: scale(1.2);
+    transition: transform 300ms ease-out;
+}
+article .contenu .coeur-plein {
+    display: none;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out;
+    cursor: pointer;
+}
+article .contenu .coeur-plein:hover {
     transform: scale(1.2);
     transition: transform 300ms ease-out;
 }
