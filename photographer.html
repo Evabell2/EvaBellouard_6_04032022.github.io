@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="images/images/logo.png" class="logo"/></a>
+      <a href="index.html"><img src="images/images/logo.png" alt="Logo du site" class="logo"/></a>
     </header>
     
     <main id="main" class="pagePhotographer">
@@ -45,27 +45,27 @@
             <h2 >Contactez-moi</h2>
             <p></p>
           </div>
-          <img src="images/icons/close.svg" id="boutonClose" onclick="closeModal()" aria-label="Fermer le formulaire" tabindex="8" />
+          <img src="images/icons/close.svg" id="boutonClose" onclick="closeModal()" aria-label="Fermer le formulaire" tabindex="8" alt="Bouton de fermeture" />
         </header>
 				<form action="photographer.html" method="get" aria-label="Formulaire de contact">
 
 					<div>
-						<label>Prénom</label>
+						<label for="prenom">Prénom</label>
 						<input required tabindex="3" class="prenom"/>
 					</div>
 
           <div>
-						<label>Nom</label>
+						<label for="nom">Nom</label>
 						<input required tabindex="4" class="nom"/>
 					</div>
 
           <div>
-						<label>Email</label>
+						<label for="email">Email</label>
 						<input required tabindex="5" class="email"/>
 					</div>
 
           <div>
-						<label>Votre message</label>
+						<label for="textarea">Votre message</label>
 						<input class="textarea" required tabindex="6"></input>
 					</div>
 
