@@ -99,7 +99,7 @@ article .contenu p::after {
     width: 25px;
     height: 25px;
     margin-left: 5px;
-    background: url("images/icons/coeur.png");
+    background: url("/images/icons/coeur.png");
     background-size: contain;
 }
 article p:hover {
@@ -164,7 +164,7 @@ article .contenu p:hover {
     display: block;
     width: 20px;
     height: 20px;
-    background: url("images/icons/icons8-chevron-droit-26.png") center no-repeat;
+    background: url("/images/icons/icons8-chevron-droit-26.png") center no-repeat;
     background-size: contain;
 }
 #filtres ul#filtre-open li#filtre-popularite::after {
@@ -172,7 +172,7 @@ article .contenu p:hover {
     display: block;
     width: 20px;
     height: 20px;
-    background: url("images/icons/icons8-chevron-droit-26.png") center no-repeat;
+    background: url("/images/icons/icons8-chevron-droit-26.png") center no-repeat;
     background-size: contain;
     transform: rotate(180deg);
 }
@@ -214,7 +214,7 @@ article .contenu p:hover {
     margin-top: -14px;
     width: 40px;
     height: 30px;
-    background: url("images/icons/icons8-chevron-droit-60.png") center;
+    background: url("/images/icons/icons8-chevron-droit-60.png") center;
     background-size: contain;
     border: none;
     text-indent: -3000px;
@@ -234,7 +234,7 @@ article .contenu p:hover {
     right: 17%;
     width: 40px;
     height: 40px;
-    background: url("images/icons/icons8-multiplier-48.png") center;
+    background: url("/images/icons/icons8-multiplier-48.png") center;
     background-size: contain;
     border: none;
     text-indent: -3000px;
@@ -274,7 +274,7 @@ article .contenu p:hover {
     width: 25px;
     height: 25px;
     margin-left: 15px;
-    background: url("images/icons/coeur.png");
+    background: url("/images/icons/coeur.png");
     background-size: contain;
 }
 
