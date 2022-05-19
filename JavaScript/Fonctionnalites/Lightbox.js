@@ -4,7 +4,7 @@ function Lightbox() {
     for (const link of links) {
         link.addEventListener('click', event => {
             const lightbox = document.createElement('div')
-            event.preventDefault();
+            event.preventDefault()
             let card = event.currentTarget
             let url = card.getAttribute('href')
             const title = (card.parentNode.querySelector("h3")).innerHTML

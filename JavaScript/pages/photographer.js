@@ -82,9 +82,9 @@
         photographersSection.innerHTML = ``
         for (const media of profilData.media) {
             if (media.photographerId==profilPhotographe) {
-                const mediaModel = MediaFactory(media, profil);
-                const mediaCardDom = mediaModel.getUserMedia();
-                photographersSection.appendChild(mediaCardDom);
+                const mediaModel = MediaFactory(media, profil)
+                const mediaCardDom = mediaModel.getUserMedia()
+                photographersSection.appendChild(mediaCardDom)
                 // appeler la factory pour le media en cours
                 // insérer la carte générée dans le DOM
                 likes+=media.likes

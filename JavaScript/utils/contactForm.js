@@ -1,13 +1,13 @@
 const modal = document.getElementById("contact_modal");
 
 function displayModal() {
-    modal.style.display = "block";
+    modal.style.display = "block"
     const firstInput = modal.querySelector("input")
     firstInput.focus()
 }
 
 function closeModal() {
-    modal.style.display = "none";
+    modal.style.display = "none"
 }
 
 document.addEventListener("keydown", e => {
