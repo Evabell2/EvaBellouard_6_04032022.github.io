@@ -95,7 +95,16 @@
         blocLikes.id = 'compteur-likes'
         blocLikes.tabIndex='0'
         blocLikes.innerHTML = `
-        <span>${totalLike}</span>
+        <span id="likesTotal">${totalLike}</span>
         <span>${profil.price} € / jour</span>`
         document.body.appendChild(blocLikes)
+
+        boutonLikes = document.querySelectorAll('.contenu > p')
+        likesTotal = document.getElementById('likesTotal')
+        for (const boutonLike of boutonLikes) {
+            boutonLike.addEventListener('click', element => {
+                boutonLike.textContent++
+                likesTotal.textContent++
+            })
+        }
     }
