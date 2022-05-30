@@ -38,6 +38,11 @@ header a {
     font-size: 60px;
     font-weight: 100;
 }
+@media screen and (max-width:1200px) {
+    .photograph-header h1 {
+        font-size: 35px;
+    }
+}
 .photograph-header h2 {
     margin: 0;
     color: #901C1C;
@@ -93,36 +98,21 @@ article .contenu p {
     display: flex;
     margin: 0;
     font-weight: bold;
-}
-article .contenu div {
-    display: flex;
-    align-items: center;
-}
-article .contenu .coeur-vide {
-    display: block;
-    width: 25px;
-    height: 25px;
-    margin-left: 5px;
     transform: scale(1);
     transition: transform 300ms ease-in-out;
     cursor: pointer;
 }
-article .contenu .coeur-vide:hover {
+article .contenu p:hover {
     transform: scale(1.2);
     transition: transform 300ms ease-out;
 }
-article .contenu .coeur-plein {
-    display: none;
+article .contenu p::after {
+    content: "";
     width: 25px;
     height: 25px;
     margin-left: 5px;
-    transform: scale(1);
-    transition: transform 300ms ease-in-out;
-    cursor: pointer;
-}
-article .contenu .coeur-plein:hover {
-    transform: scale(1.2);
-    transition: transform 300ms ease-out;
+    background: url("/images/icons/coeur.png");
+    background-size: contain;
 }
 
 /* FILTRES */
@@ -147,6 +137,12 @@ article .contenu .coeur-plein:hover {
     padding: 10px;
     background: #901C1C;
     border-radius: 5px;
+}
+@media screen and (max-width:1200px) {
+    #filtres ul {
+        right: 73%;
+        width: 15%;
+    }
 }
 #filtres ul:hover, #filtres ul:focus {
     background: #D3573C;
@@ -223,18 +219,14 @@ article .contenu .coeur-plein:hover {
 }
 .lightbox_next, .lightbox_prev {
     position: fixed;
-    top: 50%;
-    margin-top: -14px;
     width: 40px;
     height: 30px;
     background: url("/images/icons/icons8-chevron-droit-60.png") center;
     background-size: contain;
     border: none;
-    text-indent: -3000px;
     cursor: pointer;
 }
 .lightbox_prev {
-    right: auto;
     left: 17%;
     transform: rotate(180deg);
 }
@@ -250,7 +242,6 @@ article .contenu .coeur-plein:hover {
     background: url("/images/icons/icons8-multiplier-48.png") center;
     background-size: contain;
     border: none;
-    text-indent: -3000px;
     cursor: pointer;
 }
 .lightbox h3 {
@@ -268,7 +259,7 @@ article .contenu .coeur-plein:hover {
     bottom: 0;
     right: 2%;
     display: flex;
-    padding: 25px 35px;
+    padding: 20px 35px;
     background: #D3573C;
     border-radius: 10px 10px 0 0;
 }
@@ -286,8 +277,8 @@ article .contenu .coeur-plein:hover {
     display: block;
     width: 25px;
     height: 25px;
-    margin-left: 15px;
-    background: url("/images/icons/coeur.png");
+    margin-left: 5px;
+    background: url("/images/icons/silhouette-de-forme-simple-de-coeur.png");
     background-size: contain;
 }
 
@@ -302,6 +293,7 @@ article .contenu .coeur-plein:hover {
     right: 0;
     height: 100%;
     width: 100%;
+    z-index: 1;
 }
 
 .contact_button {
@@ -329,11 +321,17 @@ article .contenu .coeur-plein:hover {
     align-items: center;
     justify-content: space-between;
     padding: 20px 35px 35px 35px;
-    margin: 5% auto;
+    margin: 2% auto;
+}
+@media screen and (max-width:1200px) {
+    .modal {
+        width: 40%;
+    }
 }
 
 .modal header {
     justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
     margin-bottom: 3%;
@@ -380,7 +378,7 @@ form input {
     border: none;
     border-radius: 5px;
 }
-form .textarea {
-    height: 130px;
+form #textarea {
+    height: 140px;
     margin-bottom: 5%;
 }

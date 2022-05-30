@@ -1,8 +1,8 @@
+/* eslint-disable no-undef */ //lightbox()
 
     // Récupère l'Id de l'URL
     let urlData = new URLSearchParams(window.location.search)
     const profilPhotographe = urlData.get('id')
-    // console.log(profilPhotographe)
     
     let profilData = []
     let profil
@@ -27,8 +27,10 @@
             // profil = info du photographe
 
             document.querySelector(".modal p").innerHTML = `${profil.name}`
+            // Nom du photographe dans la modale du form
 
 
+            // Filtres
             const populariteFiltre = document.getElementById('filtre-popularite');
             const dateFiltre = document.getElementById('filtre-date');
             const titreFiltre = document.getElementById('filtre-titre');
@@ -37,11 +39,13 @@
             populariteFiltre.addEventListener('click', () => {
                 profilData.media.sort((a,b) => b.likes - a.likes)
                 renderCards()
+                Lightbox()
             })
             populariteFiltre.addEventListener("keydown", e => {
                 if (e.key == 'Enter') {
                     profilData.media.sort((a,b) => b.likes - a.likes)
                     renderCards()
+                    Lightbox()
                 }
             })
 
@@ -51,6 +55,7 @@
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf()
                 }
                 renderCards()
+                Lightbox()
             })
             dateFiltre.addEventListener('keydown', () => {
                 profilData.media.sort(byDate)
@@ -58,17 +63,20 @@
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf()
                 }
                 renderCards()
+                Lightbox()
             })
-        
+    
             titreFiltre.addEventListener('click', () => {
                 profilData.media.sort((a,b) => a.title.localeCompare(b.title))
                 renderCards()
+                Lightbox()
             })
             titreFiltre.addEventListener('keydown', () => {
                 profilData.media.sort((a,b) => a.title.localeCompare(b.title))
                 renderCards()
+                Lightbox()
             })
-
+            
             renderCards()
             Lightbox()
         })
@@ -89,6 +97,7 @@
                 likes+=media.likes
             }
         }
+        // Incrémentation likes
         const totalLike = likes
         const blocLikes = document.createElement('div')
         blocLikes.id = 'compteur-likes'
@@ -99,18 +108,18 @@
         document.body.appendChild(blocLikes)
 
         const boutonLikes = document.querySelectorAll('.contenu p')
-        // const coeurVide = document.querySelector('.coeur-vide')
-        // const coeurplein = document.querySelector('.coeur-plein')
         const likesTotal = document.getElementById('likesTotal')
-
+        
         for (const boutonLike of boutonLikes) {
             boutonLike.addEventListener('click', () => {
                 boutonLike.textContent++
                 likesTotal.textContent++
             })
-            // boutonLike.removeEventListener('click', element => {
-            //     boutonLike.textContent-=
-            //     likesTotal.textContent-=
-            // })
+            boutonLike.addEventListener("keydown", e => {
+                if (e.key == 'Enter') {
+                    boutonLike.textContent++
+                    likesTotal.textContent++
+                }
+            })
         }
     }

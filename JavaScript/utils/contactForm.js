@@ -9,17 +9,19 @@ function displayModal() {
 boutonContact.addEventListener('click', () => {
     displayModal()
 })
-
 function closeModal() {
     modal.style.display = "none"
 }
-
 document.addEventListener("keydown", e => {
-    if (e.key == 'Enter' || e.key == 'Escape') {
+    if (e.key == 'Escape') {
         closeModal()
+        const photoProfil = document.querySelector('.photo-de-profil>img')
+        photoProfil.focus()
     }
 })
 
+
+// Afficher les données du formulaire dans la console
 const inputPrenom = document.getElementById("prenom")
 const inputNom = document.getElementById("nom")
 const inputEmail = document.getElementById("email")

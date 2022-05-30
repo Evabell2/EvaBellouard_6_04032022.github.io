@@ -82,6 +82,7 @@ function Lightbox() {
             next.ariaLabel="Va à l'image suivante"
             lightbox.appendChild(next)
 
+            // Navigation clavier
             next.addEventListener('click', goNext)
             document.addEventListener("keydown", e => {
                 if (e.key == 'ArrowRight') {
@@ -100,6 +101,8 @@ function Lightbox() {
             document.addEventListener("keydown", e => {
                 if (e.key == 'Escape') {
                     goClose()
+                    const cibleSuivante = card.parentNode.nextSibling.firstChild
+                    cibleSuivante.focus()
                 }
             })
         })
