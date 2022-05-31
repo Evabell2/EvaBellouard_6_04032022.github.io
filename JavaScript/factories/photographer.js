@@ -36,6 +36,7 @@ function MediaFactory(data, photographer) {
         const p = document.createElement('p')
         p.textContent = likes
         p.tabIndex="0"
+        p.ariaLabel = "likes"
 
         article.appendChild(div)
         div.appendChild(h3)

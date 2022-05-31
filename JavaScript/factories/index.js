@@ -18,6 +18,7 @@ function photographerFactory(data) {
         divImage.tabIndex="0"
         const a = document.createElement( 'a' )
         a.setAttribute("href", link)
+        a.ariaLabel = `${name}`
         const img = document.createElement( 'img' )
         img.setAttribute("src", picture)
         img.setAttribute("alt", pictureAlt)
