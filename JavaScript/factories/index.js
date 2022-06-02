@@ -1,4 +1,5 @@
 // Modèle Photographe page d'accueil
+// eslint-disable-next-line no-unused-vars
 function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data
 
@@ -42,4 +43,3 @@ function photographerFactory(data) {
     }
     return { name, picture, pictureAlt, location, tagline, prices, link, getUserCardDOM }
 }
-photographerFactory()
