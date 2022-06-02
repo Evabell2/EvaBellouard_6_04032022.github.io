@@ -14,7 +14,7 @@
         .then((res) => res.json())
         .then((data) => {
             profilData = data
-            profil = data.photographers.find( photographer => photographer.id == profilPhotographe );
+            profil = data.photographers.find( photographer => photographer.id == profilPhotographe )
             document.querySelector(".profil-photographe").innerHTML = 
             `<h1 tabindex="0">${profil.name}</h1>
              <div tabindex="0">
