@@ -13,13 +13,13 @@ function MediaFactory(data, photographer) {
         a.setAttribute("href", pictureMedia)
         
         if (videoMedia.includes('mp4')) {
-            const video = document.createElement( 'video' )
-            video.setAttribute("src", videoMedia)
-            video.setAttribute("alt", pictureAlt)
-            video.controls = true
-            video.ariaLabel="Ouvre la vue lightbox"
+            const lavideo = document.createElement( 'video' )
+            lavideo.setAttribute("src", videoMedia)
+            lavideo.setAttribute("alt", pictureAlt)
+            lavideo.controls = true
+            lavideo.ariaLabel="Ouvre la vue lightbox"
             article.appendChild(a)
-            a.appendChild(video)
+            a.appendChild(lavideo)
         }
         else {
             const img = document.createElement( 'img' )

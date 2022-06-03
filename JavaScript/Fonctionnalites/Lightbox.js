@@ -54,6 +54,7 @@ function Lightbox() {
             img.src = url
             const video = document.createElement('video')
             video.src = srcVideo
+            video.controls = true
             
             div.appendChild(video)
             div.appendChild(img)
