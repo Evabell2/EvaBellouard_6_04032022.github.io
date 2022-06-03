@@ -16,6 +16,7 @@ function MediaFactory(data, photographer) {
             const video = document.createElement( 'video' )
             video.setAttribute("src", videoMedia)
             video.setAttribute("alt", pictureAlt)
+            video.controls = true
             video.ariaLabel="Ouvre la vue lightbox"
             article.appendChild(a)
             a.appendChild(video)
